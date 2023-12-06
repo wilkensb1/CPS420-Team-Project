@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import OrderItem
+from .models import OrderItem, Order
 from .forms import OrderCreateForm
 from cart.cart import Cart
 
@@ -19,3 +19,7 @@ def order_create(request):
     else:
         form = OrderCreateForm()
     return render(request,'orders/order/create.html',{'cart': cart, 'form': form})
+
+def order_list(request):
+    orders = Order.objects.all()
+    return render(request, 'orders/list.html',{'orders': orders})

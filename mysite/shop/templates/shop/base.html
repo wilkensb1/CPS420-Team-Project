@@ -11,6 +11,9 @@
             <a href="/" class="logo">My shop</a>
         </div>
         <div id="subheader">
+            <div class="order">
+                <a href="{% url "orders:order_list" %}">Your orders</a>
+            </div>
             <div class="cart">
                 {% with total_items=cart|length %}
                     {% if total_items > 0 %}
