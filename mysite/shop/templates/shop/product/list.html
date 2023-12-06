@@ -29,6 +29,7 @@
                 <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
                 <br>
                 ${{ product.price}}
+                <p>Current Stock: {{ product.stock }}</p>
             </div>
         {% endfor %}
     </div>
