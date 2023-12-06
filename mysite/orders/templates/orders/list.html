@@ -8,15 +8,19 @@
     <h1>Your Orders</h1>
     <div class="order-list">
         {% for order in orders %}
+            <br>
+            Order ID:{{ order.id }}
+            <br>
+            {% for item in items %}
+                Product:{{ item.product }}
                 <br>
-                Order ID:{{ order.id }}
-                <br>
-                Order Cost:{{ order.get_total_cost }}
-                <br>
-                Order Paid:{{ order.paid }}
-                <br>
-                Order Delivered:{{ order.delivered }}
-                <br>
+            {% endfor %}
+            Order Cost:{{ order.get_total_cost }}
+            <br>
+            Order Paid:{{ order.paid }}
+            <br>
+            Order Delivered:{{ order.delivered }}
+            <br>
         {% endfor %}
     </div>
 {% endblock %}

@@ -22,4 +22,5 @@ def order_create(request):
 
 def order_list(request):
     orders = Order.objects.all()
-    return render(request, 'orders/list.html',{'orders': orders})
+    items = OrderItem.objects.all()
+    return render(request, 'orders/list.html',{'orders': orders, 'items': items})
