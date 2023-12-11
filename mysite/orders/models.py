@@ -14,6 +14,7 @@ class Order(models.Model):
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
     delivered = models.BooleanField(default=False)
+    discount = models.CharField(max_length=10, default='0')
 
     class Meta:
         ordering = ['-created']
